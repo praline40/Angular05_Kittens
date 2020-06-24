@@ -1,0 +1,17 @@
+  
+<app-app-create-kitten
+    (getNewKitten)="onReceiveNewKitten($event)"
+></app-app-create-kitten>
+ 
+
+<app-app-list-kitten
+    [newKitten]="newKitten"
+    [abandonKitten]="abandonKitten"
+    (getAdoptedKitten)="onReceiveAdoptedKitten($event)"
+></app-app-list-kitten>
+
+
+<app-app-user-kitten
+    [newKitten]="adoptedKitten"
+    (getAbandonKitten)="onReceiveNewKitten($event)"
+></app-app-user-kitten>

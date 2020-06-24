@@ -1,0 +1,75 @@
+
+
+<div class="row">
+    <div class="col-12">
+        <div id="carousel" class="carousel slide mb-2" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" *ngFor="let slide of slides; let i = index">
+                <div class="carousel-inner col-md-4" >
+                    <div class="carousel-item active" *ngFor="let kitten of slide">
+                        <div class="card bg-dark text-white">
+                            <img src={{kitten.photo}} class="card-img" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{kitten.name}}</h5>
+                                <p>{{kitten.birthday}}</p>
+                                <p>{{kitten.race}}</p>
+                                <form (ngSubmit) = "sendAdoptedKittenToParent()">
+                                    <input type="hidden" name="name" value="{{kitten.name}}" 
+                                    [(ngModel)]="adoptedKitten.name">
+                                    <input type="hidden" name="race" value="{{kitten.race}}" 
+                                    [(ngModel)]="adoptedKitten.race">
+                                    <input type="hidden" name="birthday" value="{{kitten.birthday}}"
+                                    [(ngModel)]="adoptedKitten.birthday">
+                                    <button type='submit' class="btn btn-primary active">Adopt</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+ 
+
+
+<!--  
+
+<mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+
+    [animation]="'slide'">
+
+    <mdb-carousel-item *ngFor="let slide of slides; let i = index">
+
+        <div class="col-md-4" *ngFor="let kitten of slide">
+            <form (ngSubmit) = "sendAdoptedKittenToParent()">
+                <mdb-card>
+                    <input type="hidden" name="kitten" value="{{kitten}}" ng-model="adoptedKitten"
+                    [(ngModel)]="adoptedKitten">
+                    <mdb-card-img [src]="kitten.photo" alt="Card image cap"></mdb-card-img>
+                    <mdb-card-body >
+                        <mdb-card-title> <h4>{{kitten.name}}</h4> </mdb-card-title>
+                        <p>{{kitten.birthday}}</p>
+                        <p>{{kitten.race}}</p>
+                        <button type="submit" class="btn btn-primary">Adopt</button>
+                    </mdb-card-body>
+                </mdb-card>
+            </form>
+        </div>
+
+    </mdb-carousel-item>
+
+</mdb-carousel>
+
+-->

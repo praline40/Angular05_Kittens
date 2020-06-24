@@ -1,0 +1,25 @@
+
+<div class="row mx-2">
+    <div class="col-12">
+        <form #myForm="ngForm" (ngSubmit)="sendNewKittenToParent()">
+            <h3> Create a new kitten :</h3>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input [(ngModel)] = "newKitten.name" name="name" id="name" type='text' class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="race">Race:</label>
+                <input [(ngModel)] = "newKitten.race" name="race" id="race" type='text' class="form-control">
+            </div>
+            <div class="form-group">    
+                <label for="birthday">Birthday:</label>
+                <input [(ngModel)] = "newKitten.birthday" name="birthday" id="birthday" type='date' class="form-control">
+            </div>    
+            <div class="form-group">    
+                <label for="photo"> Photo:</label>
+                <input [(ngModel)] = "newKitten.photo" name="photo" id="photo" type='url' class="form-control">
+            </div>  
+            <button type='submit' class='btn btn-primary'>Create</button>
+        </form>
+    </div>
+</div>
