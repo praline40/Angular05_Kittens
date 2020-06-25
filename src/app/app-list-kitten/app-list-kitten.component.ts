@@ -31,8 +31,8 @@ export class AppListKittenComponent implements OnInit, OnChanges {
   @Output()
   public getAdoptedKitten:EventEmitter<Kitten> = new EventEmitter();
   public sendAdoptedKittenToParent(){
-    console.log("ffffffffffffffffffffffffffff");
-    //console.log(`${this.adoptedKitten.name} has been adopted`);
+    console.log("sendAdoptedKittenToParent");
+    console.log(`${this.adoptedKitten.name} has been adopted`);
     this.getAdoptedKitten.emit(this.adoptedKitten);
     this.removeKitten(this.adoptedKitten);
     this.slides = this.chunk(this.kittensToAdopt, 3);
